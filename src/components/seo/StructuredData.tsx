@@ -20,7 +20,7 @@ export default function StructuredData() {
           "@type": "ContactPoint",
           "telephone": "+91-773-635-5958",
           "contactType": "customer support",
-          "email": "hello@zayvon.com",
+          "email": "hello@zayvon.tech",
           "availableLanguage": ["English", "Malayalam"]
         }
       },
@@ -40,7 +40,7 @@ export default function StructuredData() {
         "url": "https://zayvon.tech",
         "image": "https://zayvon.tech/opengraph-image.png",
         "telephone": "+91-773-635-5958",
-        "email": "hello@zayvon.com",
+        "email": "hello@zayvon.tech",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Kerala",
