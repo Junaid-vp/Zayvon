@@ -33,11 +33,11 @@ export default function Footer() {
         >
           {/* Email */}
           <a
-            href="mailto:hello@zayvon.com"
+            href="mailto:hello@zayvon.tech"
             className="hover:text-white transition-colors duration-250 w-fit"
             style={{ fontSize: 15, fontWeight: 300, letterSpacing: "-0.03em", color: "rgba(255,255,255,0.92)" }}
           >
-            hello@zayvon.com
+            hello@zayvon.tech
           </a>
 
           {/* Center group - Desktop only */}
