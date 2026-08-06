@@ -54,6 +54,7 @@ const ScrollVideo = forwardRef<ScrollVideoHandle>(function ScrollVideo(_, ref) {
         src="/Zayvon.mp4"
         muted
         playsInline
+        autoPlay
         preload="auto"
         aria-hidden="true"
       />

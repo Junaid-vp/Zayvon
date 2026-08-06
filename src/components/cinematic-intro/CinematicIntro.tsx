@@ -154,10 +154,13 @@ export default function CinematicIntro() {
 
     /* ── Wait for video metadata so video.duration is available ────── */
     const init = () => {
-      // Debug: confirm video metadata
-      console.log("[ZAYVON] init() called");
-      console.log("[ZAYVON] video.duration:", video.duration);
-      console.log("[ZAYVON] video.readyState:", video.readyState);
+      // iOS Safari hack: trigger play() to unlock video decoding, then immediately pause()
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.then(() => video.pause()).catch(() => {});
+      } else {
+        video.pause();
+      }
 
       const ctx = gsap.context(() => {
         /* ── Master timeline ────────────────────────────────────────── */
