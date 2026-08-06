@@ -46,7 +46,7 @@ export default function Contact() {
     // Validation
     const nameValid = formData.name.trim().length > 0;
     const emailValid = validateEmail(formData.email);
-    const projectValid = formData.project.trim().length >= 20;
+    const projectValid = formData.project.trim().length >= 5;
 
     setErrors({
       name: !nameValid,
@@ -188,7 +188,7 @@ export default function Contact() {
                 rows={2}
                 className={`w-full bg-transparent border-b ${errors.project ? 'border-red-500/50' : 'border-white/20'} hover:border-white/40 focus:border-white/80 transition-colors duration-300 py-2 text-[16px] text-white outline-none font-light resize-none`}
               />
-              {errors.project && <span className="text-red-400 text-[10px] mt-1.5">Please provide at least 20 characters</span>}
+              {errors.project && <span className="text-red-400 text-[10px] mt-1.5">Please provide at least 5 characters</span>}
             </div>
 
             {/* Submit Button */}
