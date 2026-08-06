@@ -101,6 +101,15 @@ const ScrollVideo = forwardRef<ScrollVideoHandle>(function ScrollVideo(_, ref) {
         }}
         aria-hidden="true"
       />
+
+      {/* Mobile Floor Smoother — Fades the hard horizontal floor edge into black on tall screens */}
+      <div
+        className="pointer-events-none absolute bottom-0 left-0 right-0 z-[13] h-[25vh]"
+        style={{
+          background: "linear-gradient(to top, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 100%)"
+        }}
+        aria-hidden="true"
+      />
     </div>
   );
 });
