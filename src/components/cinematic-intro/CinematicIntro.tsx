@@ -437,6 +437,11 @@ export default function CinematicIntro() {
 
       }, section);
 
+      // Force GSAP to recalculate all trigger positions now that this pin-spacer exists
+      // This is crucial because this initialization happens asynchronously (after video loads),
+      // meaning subsequent components (like ProductExplorer) might have already calculated
+      // their start positions incorrectly.
+      setTimeout(() => ScrollTrigger.refresh(), 50);
 
       return ctx;
     };
