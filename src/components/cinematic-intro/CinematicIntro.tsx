@@ -172,6 +172,7 @@ export default function CinematicIntro() {
             start: "top top",
             end: `+=${SCROLL_DISTANCE}`,
             invalidateOnRefresh: true,
+            refreshPriority: 1,
             onUpdate: (self) => {
               // Video occupies 0 → VIDEO_END of the scroll progress
               const videoProgress = gsap.utils.clamp(
@@ -444,7 +445,10 @@ export default function CinematicIntro() {
       // This is crucial because this initialization happens asynchronously (after video loads),
       // meaning subsequent components (like ProductExplorer) might have already calculated
       // their start positions incorrectly.
-      setTimeout(() => ScrollTrigger.refresh(), 50);
+      setTimeout(() => {
+        ScrollTrigger.sort();
+        ScrollTrigger.refresh();
+      }, 150);
 
       return ctx;
     };
