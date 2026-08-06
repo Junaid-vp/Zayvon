@@ -26,7 +26,7 @@ export default function ProductExplorer() {
   useIsomorphicLayoutEffect(() => {
     if (!containerRef.current || !pinRef.current) return;
 
-    let ctx = gsap.matchMedia();
+    const ctx = gsap.matchMedia();
 
     ctx.add("(min-width: 1024px)", () => {
       // Pin the container for 600vh only on desktop
@@ -55,6 +55,9 @@ export default function ProductExplorer() {
             if (prev !== newIndex) return newIndex;
             return prev;
           });
+
+          // Clear hover when scrolling to prevent getting stuck
+          setHoverIndex((prev) => (prev !== null ? null : prev));
         },
       });
     });
@@ -62,6 +65,24 @@ export default function ProductExplorer() {
     return () => {
       ctx.revert();
     };
+  }, []);
+
+  const handleNavigate = React.useCallback((index: number) => {
+    if (!containerRef.current || window.innerWidth < 1024) return;
+    const st = ScrollTrigger.getAll().find(
+      (t) => t.trigger === containerRef.current
+    );
+    if (st) {
+      // Calculate the exact scroll position for this index
+      const totalScroll = st.end - st.start;
+      const targetScroll = st.start + (totalScroll / 7) * index + 10; // +10px safety to ensure we cross the threshold
+      
+      gsap.to(window, {
+        scrollTo: targetScroll,
+        duration: 0.8,
+        ease: "power3.inOut",
+      });
+    }
   }, []);
 
   // Keyboard navigation
@@ -85,25 +106,7 @@ export default function ProductExplorer() {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [activeIndex]);
-
-  const handleNavigate = (index: number) => {
-    if (!containerRef.current || window.innerWidth < 1024) return;
-    const st = ScrollTrigger.getAll().find(
-      (t) => t.trigger === containerRef.current
-    );
-    if (st) {
-      // Calculate the exact scroll position for this index
-      const totalScroll = st.end - st.start;
-      const targetScroll = st.start + (totalScroll / 7) * index + 10; // +10px safety to ensure we cross the threshold
-      
-      gsap.to(window, {
-        scrollTo: targetScroll,
-        duration: 0.8,
-        ease: "power3.inOut",
-      });
-    }
-  };
+  }, [activeIndex, handleNavigate]);
 
   return (
     <>
