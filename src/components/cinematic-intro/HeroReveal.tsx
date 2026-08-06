@@ -33,7 +33,7 @@ const HeroReveal = forwardRef<HTMLDivElement>(function HeroReveal(_, ref) {
           opacity: 0,
           transform: "translateY(40px)",
           filter: "blur(12px)",
-          fontSize: "clamp(3rem, 7vw, 7rem)",
+          fontSize: "clamp(2.25rem, 6vw, 7rem)",
           fontWeight: 200,
           letterSpacing: "-0.02em",
           lineHeight: 1.1,
@@ -52,7 +52,7 @@ const HeroReveal = forwardRef<HTMLDivElement>(function HeroReveal(_, ref) {
           transform: "translateY(24px)",
           filter: "blur(10px)",
           marginTop: "clamp(2rem, 4vw, 3rem)",
-          fontSize: "clamp(1rem, 1.5vw, 1.25rem)",
+          fontSize: "clamp(0.875rem, 1.5vw, 1.25rem)",
           fontWeight: 300,
           letterSpacing: "0.1em",
           maxWidth: "600px",
@@ -78,7 +78,7 @@ const HeroReveal = forwardRef<HTMLDivElement>(function HeroReveal(_, ref) {
             letterSpacing: "0.2em",
           }}
         >
-          Selected Work
+          Scroll
         </span>
         <div className="h-12 w-px bg-gradient-to-b from-white/30 to-transparent" />
       </div>

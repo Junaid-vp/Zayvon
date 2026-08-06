@@ -1,0 +1,11 @@
+/* TEAM */
+Engineer: Mohammed Junaid VP
+Role: Founder & Lead Engineer
+Site: https://zayvon.tech
+Location: Kerala, India
+
+/* SITE */
+Language: English
+Standards: HTML5, CSS3, ES6
+Components: Next.js, React, GSAP, Tailwind CSS
+Design: ZAYVON Digital Studio

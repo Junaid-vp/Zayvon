@@ -99,9 +99,9 @@ const HERO_TAGLINE_END = 0.87;
 const HERO_CTA_START = 0.87;
 const HERO_CTA_END = 0.91;
 
-/** Navbar — last to appear: 91% → 95% */
-const NAVBAR_START = 0.91;
-const NAVBAR_END = 0.95;
+/** Navbar — fades in alongside the main Hero wordmark: 76% → 82% */
+const NAVBAR_START = 0.76;
+const NAVBAR_END = 0.82;
 
 /** Hold so user absorbs the full site: 95% → 100% → pin releases */
 
@@ -446,12 +446,9 @@ export default function CinematicIntro() {
 
     if (video.readyState >= 1) {
       // metadata already loaded
-      console.log("[ZAYVON] video metadata already loaded, readyState:", video.readyState);
       ctx = init();
     } else {
-      console.log("[ZAYVON] waiting for loadedmetadata, readyState:", video.readyState);
       const onLoaded = () => {
-        console.log("[ZAYVON] loadedmetadata fired, duration:", video.duration);
         ctx = init();
       };
       video.addEventListener("loadedmetadata", onLoaded, { once: true });
@@ -471,7 +468,7 @@ export default function CinematicIntro() {
   return (
     <section
       ref={sectionRef}
-      className="relative h-screen w-full overflow-hidden bg-black"
+      className="relative h-[100lvh] w-full overflow-hidden bg-black"
     >
       {/* Video + Poster + Atmosphere + Glow */}
       <ScrollVideo ref={videoLayerRef} />

@@ -1,0 +1,20 @@
+# ZAYVON Digital Studio
+
+ZAYVON is a premium digital studio specializing in high-performance web applications, striking brand experiences, and cutting-edge digital craftsmanship.
+
+## Mission
+We design digital experiences that command attention. A premium digital studio crafting first impressions that convert.
+
+## Services
+- Bespoke Web Applications
+- Digital Brand Experiences
+- High-Performance Architectures
+
+## Technology Stack
+- Next.js (React)
+- GSAP (GreenSock Animation Platform)
+- Tailwind CSS
+
+## Contact
+Email: hello@zayvon.com
+Website: https://zayvon.tech

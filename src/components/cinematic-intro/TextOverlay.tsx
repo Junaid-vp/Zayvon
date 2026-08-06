@@ -31,7 +31,12 @@ const TextOverlay = forwardRef<HTMLDivElement, TextOverlayProps>(
       >
         <p 
           className={`relative max-w-4xl text-center ${isZayvon ? "" : "text-2xl font-light leading-[1.4] tracking-[-0.01em] text-white/90 sm:text-3xl md:text-4xl lg:text-5xl"}`}
-          style={{ top: lines[0] === "We build digital first impressions." ? "-36vh" : "0" }}
+          style={{ 
+            fontFamily: 'var(--font-quicksand)',
+            top: lines[0] === "We build digital first impressions." ? "-36vh" : 
+                 lines[0] === "People don't buy websites." ? "-36vh" : "0",
+            textShadow: isZayvon ? "none" : "0px 4px 40px rgba(0,0,0,1), 0px 2px 10px rgba(0,0,0,0.6)"
+          }}
         >
           {lines.map((line, i) => {
             let spanClass = "block intro-span ";
