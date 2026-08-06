@@ -92,6 +92,15 @@ const ScrollVideo = forwardRef<ScrollVideoHandle>(function ScrollVideo(_, ref) {
         }}
         aria-hidden="true"
       />
+
+      {/* Watermark Hider — obscures the Veo watermark in the bottom right */}
+      <div 
+        className="pointer-events-none absolute bottom-[-5px] right-[-5px] z-[13] w-40 h-24"
+        style={{
+          background: "radial-gradient(ellipse at 100% 100%, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 70%)"
+        }}
+        aria-hidden="true"
+      />
     </div>
   );
 });
