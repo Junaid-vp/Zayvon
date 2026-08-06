@@ -60,7 +60,7 @@ export async function POST(req: Request) {
 
     // Send the email
     const data = await resend.emails.send({
-      from: 'ZAYVON Studio <onboarding@resend.dev>', // Use verified domain in production
+      from: 'ZAYVON Studio <onboarding@zayvon.tech>', // Make sure zayvon.tech is verified in Resend dashboard
       to: ['hello@zayvon.tech'],
       subject: 'New Project Inquiry — ZAYVON',
       replyTo: email,
